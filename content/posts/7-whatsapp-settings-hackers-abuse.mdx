@@ -1,0 +1,127 @@
+---
+title: "7 WhatsApp Settings Hackers Abuse First"
+date: "2026-05-15T07:00:00Z"
+threatLevel: MEDIUM
+excerpt: "Most WhatsApp users leave these seven settings at default — and attackers know exactly how to exploit each one. Here's what to change today."
+tags: ["whatsapp", "mobile", "privacy", "social-engineering", "nigeria"]
+author: "CyberSec NG Team"
+---
+
+## Why WhatsApp Is a Primary Attack Surface in Nigeria
+
+With over 50 million active users in Nigeria, WhatsApp is the dominant communication platform for personal and business use alike. This makes it the most targeted social engineering surface for Nigerian threat actors — including SIM swap fraudsters, BEC (Business Email Compromise) operators, and account takeover crews.
+
+Most attacks don't exploit technical vulnerabilities. They exploit **default settings** that expose more than users realize.
+
+Here are the seven settings attackers check first — and what to change right now.
+
+## 1. Last Seen & Online Status
+
+**Default:** Everyone can see when you were last online and when you're currently active.
+
+**Why attackers abuse it:** Social engineers use your activity patterns to time calls. "I can see you're online — why didn't you respond to my urgent message?" is a pressure tactic. Fraudsters also confirm account activity before attempting SIM swaps.
+
+**Fix:**
+```
+Settings → Privacy → Last Seen & Online
+→ Set both to "Nobody" or "My Contacts"
+```
+
+## 2. Profile Photo Visibility
+
+**Default:** Your profile photo is visible to everyone.
+
+**Why attackers abuse it:** Your photo is used in impersonation attacks — cloned accounts using your real photo, name, and number prefix to scam your contacts. This is particularly common in Nigerian WhatsApp business fraud.
+
+**Fix:**
+```
+Settings → Privacy → Profile Photo
+→ Set to "My Contacts"
+```
+
+## 3. Two-Step Verification (Disabled by Default)
+
+**Default:** OFF.
+
+**Why attackers abuse it:** Without two-step verification, a SIM swap is all an attacker needs to take over your WhatsApp account. Nigerian telco SIM swaps can be executed at fraudulent agent outlets for as little as ₦5,000.
+
+**Fix:**
+```
+Settings → Account → Two-Step Verification → Enable
+```
+Use a PIN you've never used elsewhere. Add a recovery email. **This is the single most important setting on this list.**
+
+## 4. Group Add Permissions
+
+**Default:** Anyone can add you to groups.
+
+**Why attackers abuse it:** Scammers add victims to fake investment groups, impersonation groups ("Staff of First Bank"), and fraud coordination groups to build social proof or harvest phone numbers.
+
+**Fix:**
+```
+Settings → Privacy → Groups
+→ Set to "My Contacts" or "My Contacts Except..."
+```
+
+## 5. Live Location Sharing
+
+**Default:** No automatic sharing, but the feature is highly accessible.
+
+**Why attackers abuse it:** Social engineers posing as couriers, bank officials, or family members request live location. This reveals your real-time whereabouts and home/work addresses.
+
+**Fix:** Never share live location with unverified contacts. Review who has your location:
+```
+Settings → Privacy → Live Location
+→ Review all active shares
+```
+
+## 6. Backup Encryption
+
+**Default:** WhatsApp backups to Google Drive or iCloud are NOT end-to-end encrypted by default.
+
+**Why attackers abuse it:** If an attacker gains access to your Google account, your entire WhatsApp message history — including OTPs, banking conversations, and personal data — is readable in plaintext.
+
+**Fix:**
+```
+Settings → Chats → Chat Backup → End-to-End Encrypted Backup
+→ Enable and set a strong password
+```
+
+## 7. Linked Devices (Check Regularly)
+
+**Default:** No notification when a new device is linked.
+
+**Why attackers abuse it:** If an attacker briefly accesses your unlocked phone, they can link WhatsApp Web to their browser. They'll then have continuous read access to all your messages — silently, without you knowing.
+
+**Fix:** Check linked devices monthly:
+```
+Settings → Linked Devices
+→ Log out of any device you don't recognize immediately
+```
+
+## Quick Audit Checklist
+
+```bash
+WhatsApp Security Audit — Run monthly
+[ ] Two-step verification: ENABLED
+[ ] Last Seen: My Contacts or Nobody
+[ ] Profile Photo: My Contacts
+[ ] Groups: My Contacts
+[ ] Backup encryption: ENABLED
+[ ] Linked devices: Reviewed, unknown devices removed
+[ ] Recovery email set: YES
+```
+
+## If Your Account Is Compromised
+
+1. **Immediately** re-register your WhatsApp with your SIM (this logs out the attacker)
+2. Enable two-step verification the moment you regain access
+3. Notify your contacts that your account was compromised — impersonation follows quickly
+4. Report to WhatsApp: Settings → Help → Contact Us
+5. File a report with ngCERT if you believe a SIM swap is involved
+
+## References
+
+- [WhatsApp Privacy Settings Guide](https://faq.whatsapp.com)
+- [ngCERT Social Engineering Advisory](https://cert.gov.ng)
+- [NCC SIM Swap Fraud Guidance](https://ncc.gov.ng)
