@@ -35,16 +35,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* RSS + Legal */}
+          {/* Legal */}
           <div>
-            <div className="font-mono text-xs text-cyber-accent mb-3">// FEEDS</div>
+            <div className="font-mono text-xs text-cyber-accent mb-3">// LEGAL</div>
             <div className="space-y-2">
-              <a href="/feed.xml" className="block text-cyber-muted hover:text-cyber-accent font-mono text-xs transition-colors">
-                <span className="text-cyber-accent/50">→ </span>RSS Feed
-              </a>
-              <a href="/sitemap.xml" className="block text-cyber-muted hover:text-cyber-accent font-mono text-xs transition-colors">
-                <span className="text-cyber-accent/50">→ </span>Sitemap
-              </a>
+              <Link href="/privacy-policy" className="block text-cyber-muted hover:text-cyber-accent font-mono text-xs transition-colors">
+                <span className="text-cyber-accent/50">→ </span>Privacy Policy
+              </Link>
+              <Link href="/disclaimer" className="block text-cyber-muted hover:text-cyber-accent font-mono text-xs transition-colors">
+                <span className="text-cyber-accent/50">→ </span>Disclaimer
+              </Link>
             </div>
           </div>
         </div>
