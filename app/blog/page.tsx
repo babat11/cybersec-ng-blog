@@ -19,6 +19,10 @@ const CATEGORY_MAP: Record<string, { label: string; tags: string[] }> = {
   career: { label: 'Career & Certifications', tags: ['career', 'certification'] },
   'deep-dives': { label: 'Deep Dives & Explainers', tags: ['deep-dive', 'explainer'] },
   'tool-reviews': { label: 'Tool Reviews', tags: ['tools', 'review'] },
+  'ai-threats': { label: 'AI Threats', tags: ['ai-threats', 'deepfake', 'ai-malware', 'ai-phishing'] },
+  'llm-security': { label: 'LLM Security', tags: ['llm-security', 'prompt-injection', 'jailbreak', 'rag-security'] },
+  'adversarial-ml': { label: 'Adversarial ML', tags: ['adversarial-ml', 'model-poisoning', 'evasion-attack', 'model-extraction'] },
+  'ai-defense-tools': { label: 'AI Defense Tools', tags: ['ai-defense', 'ai-siem', 'anomaly-detection', 'ai-redteam'] },
 }
 
 interface Props {
