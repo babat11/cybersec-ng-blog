@@ -35,6 +35,15 @@ const navItems: NavItem[] = [
     ],
   },
   {
+    label: 'AI & Security',
+    dropdown: [
+      { label: 'AI Threats', href: '/blog?category=ai-threats' },
+      { label: 'LLM Security', href: '/blog?category=llm-security' },
+      { label: 'Adversarial ML', href: '/blog?category=adversarial-ml' },
+      { label: 'AI Defense Tools', href: '/blog?category=ai-defense-tools' },
+    ],
+  },
+  {
     label: 'Tools',
     dropdown: [
       { label: 'Tool Reviews', href: '/blog?category=tool-reviews' },
