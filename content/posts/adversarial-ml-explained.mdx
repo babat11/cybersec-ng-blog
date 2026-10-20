@@ -1,0 +1,85 @@
+---
+title: "Adversarial Machine Learning Explained: How Attackers Trick AI Models (Not Just Chatbots)"
+description: "Adversarial ML isn't about tricking a chatbot with clever wording — it's about tricking the model itself. Here's how it works, in plain English."
+date: "2026-10-23"
+tags: ["adversarial-ml"]
+author: "CyberSec NG"
+---
+
+So far in this series, we've covered [prompt injection](/blog?category=llm-security) (tricking an AI through hidden instructions in text) and [AI threats](/blog?category=ai-threats) (deepfakes, AI-written scams). This post covers something related but different: **adversarial machine learning**, or adversarial ML for short.
+
+Where prompt injection tricks an AI through clever wording, adversarial ML tricks it at a deeper level — the math the model actually uses to make decisions. It's a bit more technical, but the core idea is still easy to follow.
+
+## The one-sentence definition
+
+**Adversarial ML is the practice of deliberately feeding a machine learning model input designed to make it fail, misclassify, or behave incorrectly — exploiting how the model actually "sees" data rather than tricking it with language.**
+
+This applies to any machine learning model, not just chatbots — image recognition systems, spam filters, fraud detection, facial recognition, and large language models all fall under this umbrella.
+
+## A simple way to picture it
+
+Imagine a security guard trained to recognize employee badges by their color and shape. Now imagine someone creates a fake badge that looks completely wrong to a human eye — oddly colored, strange proportions — but happens to trigger the exact same visual pattern the guard was trained to look for. The guard waves them through, confused as to why it felt wrong but technically "correct" by its own trained rules.
+
+That's the essence of an adversarial attack: finding the specific, often strange-looking input that exploits exactly how a model was trained to recognize patterns — even if that input looks nothing like a legitimate example to a human.
+
+## The main types of adversarial ML attacks
+
+**1. Evasion attacks**
+This is the most well-known type — modifying an input just enough to fool a trained model, without the change being obvious to a human. A classic example: adding a small, carefully calculated amount of digital "noise" to an image so a human still sees a cat, but an AI image classifier confidently labels it as something else entirely.
+
+**2. Data poisoning**
+Instead of attacking a finished model, this attacks the training process itself. If an attacker can sneak bad or manipulated examples into the data a model learns from, they can quietly influence how the model behaves later — without ever directly attacking the deployed system.
+
+**3. Model extraction**
+Here, an attacker repeatedly queries a model (sending inputs and studying the outputs) to reverse-engineer how it works, essentially stealing a copy of its behavior without ever accessing the original model or its training data.
+
+**4. Membership inference**
+A more privacy-focused attack — figuring out whether a specific piece of data was part of a model's training set at all, which can leak sensitive information about what data the model was trained on.
+
+## Why this matters beyond research labs
+
+It's easy to assume adversarial ML is purely academic — something researchers study in papers, not something that affects real systems. That's increasingly untrue.
+
+- **Fraud detection systems** can be evaded by attackers who learn (through trial and error) exactly which transaction patterns slip past the model.
+- **Spam and content filters** can be bypassed using inputs crafted to confuse the filter's underlying model rather than just avoiding obvious trigger words.
+- **Facial recognition systems** have been shown to be foolable using specially designed patterns, sometimes as simple as printed patterns on clothing or glasses.
+- **Any AI model** trained on data an attacker can influence is a potential target for data poisoning — including models trained on public or user-submitted data.
+
+## How this differs from prompt injection
+
+It's worth being precise about the difference, since the two are often confused:
+
+- **Prompt injection** exploits language and instructions — it works because the AI struggles to separate "instructions from you" from "instructions hidden in content it's reading."
+- **Adversarial ML** exploits the underlying model itself — the mathematical patterns it learned during training — and doesn't necessarily involve language or instructions at all. It can target image classifiers, fraud detectors, or any other machine learning system, with or without natural language involved.
+
+Both fall under the broader AI security umbrella, but they require different defenses.
+
+## How organizations defend against this
+
+- **Adversarial training** — deliberately training models on adversarial examples so they learn to resist similar tricks
+- **Input validation and anomaly detection** — flagging inputs that look statistically unusual compared to normal data
+- **Rate limiting and query monitoring** — making it harder for attackers to repeatedly probe a model to reverse-engineer or evade it
+- **Data provenance and training data audits** — carefully vetting the data a model is trained on to reduce the risk of poisoning
+- **Red-teaming models before deployment** — deliberately trying to break your own models the way an attacker would, before they ship
+
+## Frequently asked questions
+
+**Do I need to worry about this as an individual AI user?**
+Not directly — adversarial ML mostly targets the people and organizations building and deploying machine learning models, not everyday chatbot users. It's more relevant if you're a developer, data scientist, or work with AI systems that make automated decisions.
+
+**Is this the same as "jailbreaking" an AI chatbot?**
+Not quite. Jailbreaking usually refers to crafting prompts that get a chatbot to ignore its usage guidelines — that's closer to prompt injection territory. Adversarial ML is a broader, more technical category that includes attacks with no language involved at all.
+
+**Can adversarial attacks be completely prevented?**
+Not entirely, and most researchers are upfront about that. It's an ongoing arms race — as defenses improve, attack techniques adapt. The goal is raising the cost and difficulty of an attack, not eliminating the risk completely.
+
+**Which industries should care most about this?**
+Anywhere machine learning makes automated decisions with real consequences — fraud detection, security and surveillance systems, autonomous systems, content moderation, and increasingly, any business relying on AI models trained on data that could be manipulated.
+
+## The bottom line
+
+Adversarial ML is a reminder that AI security isn't just about language-based tricks like prompt injection — it's also about the underlying models themselves, and how they can be probed, fooled, or quietly poisoned. If you're building or deploying machine learning systems, understanding this category isn't optional anymore — it's part of basic due diligence.
+
+---
+
+*Catch up on the rest of the series: [Prompt Injection Explained](/blog?category=llm-security) · [How AI Defends Itself](/blog?category=ai-defense-tools) · [AI Threats You'll Actually Encounter](/blog?category=ai-threats)*
