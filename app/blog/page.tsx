@@ -22,7 +22,7 @@ const CATEGORY_MAP: Record<string, { label: string; tags: string[] }> = {
   'ai-threats': { label: 'AI Threats', tags: ['ai-threats', 'deepfake', 'ai-malware', 'ai-phishing'] },
   'llm-security': { label: 'LLM Security', tags: ['llm-security', 'prompt-injection', 'jailbreak', 'rag-security'] },
   'adversarial-ml': { label: 'Adversarial ML', tags: ['adversarial-ml', 'model-poisoning', 'evasion-attack', 'model-extraction'] },
-  'ai-defense-tools': { label: 'AI Defense Tools', tags: ['ai-defense', 'ai-siem', 'anomaly-detection', 'ai-redteam'] },
+  'ai-defense-tools': { label: 'AI Defense Tools', tags: ['ai-defense-tools', 'ai-defense', 'ai-siem', 'anomaly-detection', 'ai-redteam'] },
 }
 
 interface Props {
