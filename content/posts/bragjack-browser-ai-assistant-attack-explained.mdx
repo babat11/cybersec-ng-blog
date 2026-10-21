@@ -1,0 +1,67 @@
+---
+title: "Is Your Browser's AI Assistant Spying On You? The BragJack Attack Explained"
+description: "A security researcher found a way for a single malicious browser extension to hijack the AI assistants built into Chrome, Edge, and other major browsers. Here's how, in plain English."
+date: "2026-10-27"
+tags: ["ai-threats"]
+author: "CyberSec NG"
+---
+
+Chrome, Edge, and several other major browsers now have AI assistants built directly in — able to read what's on your screen, browse on your behalf, and sometimes even access local files. Convenient, until a researcher shows exactly how that convenience can be turned against you.
+
+That's what happened with an attack technique called **BragJack**, disclosed by security researcher Gal Weizman in September 2026. Here's what it actually does, and whether you should be worried.
+
+## The one-sentence explanation
+
+**BragJack is a technique that lets an already-installed malicious browser extension take over your browser's built-in AI assistant and use its special privileges to access your files, screenshots, and browsing data — all without you clicking anything.**
+
+The key detail: the attacker doesn't need to trick the AI with clever wording. They impersonate the website the AI is designed to trust, then hand it instructions directly.
+
+## A simple way to picture it
+
+Think of your browser's AI assistant as a trusted employee who only takes orders from one specific manager — the AI company's own website. Normally, that's a sensible security rule: only listen to instructions coming from a verified, trusted source.
+
+BragJack works by having an attacker put on that manager's badge. Instead of trying to sneak a fake instruction past security, the malicious extension impersonates the trusted source itself — so the AI assistant has no reason to question the instructions it receives. It genuinely believes it's getting orders from where it's supposed to.
+
+## How this is different from prompt injection
+
+If you read our [earlier post on prompt injection](/blog?category=llm-security), you'll recognize the general shape of this attack — but BragJack works differently in one important way. Prompt injection usually hides malicious instructions inside content the AI is reading (an email, a webpage). BragJack instead hands the AI assistant an entire, complete instruction directly, through a communication channel the AI was built to trust. The AI's safety checks, designed to scrutinize suspicious content, never get triggered — because from the AI's perspective, the instructions aren't suspicious content at all. They're coming from exactly where it expects legitimate instructions to come from.
+
+## What an attacker could actually do with this
+
+Once an attacker's extension hijacks a browser's AI assistant this way, they can potentially reuse whatever privileges that assistant already has — which, for some AI browser agents, includes reading local files, taking screenshots, and acting on logged-in accounts. The attack doesn't grant new permissions out of nowhere; it abuses permissions the AI assistant was already trusted with.
+
+## The one precondition that matters most
+
+BragJack has a critical requirement: the malicious extension needs to already be installed in your browser before any of this works. It's not a remote attack that can happen just by visiting a webpage — it requires you (or someone else using your device) to have installed a malicious or compromised extension first.
+
+That's actually good news from a defense standpoint — it means the first and most effective layer of protection is exactly where you'd expect: being careful about what extensions you install in the first place.
+
+## How to protect yourself
+
+- **Audit your browser extensions regularly.** Open your extension manager and remove anything you don't recognize, no longer use, or can't remember installing.
+- **Only install extensions from verified, well-reviewed sources**, and be skeptical of extensions with vague permissions requests or recently changed ownership.
+- **Keep your browser updated.** Major browser vendors have already shipped fixes for the specific vulnerabilities behind this attack technique — staying current matters more than ever when AI features are involved.
+- **Use a separate browser profile for sensitive accounts** (banking, healthcare, work logins) if you use a browser with deep AI integration, limiting what a compromised AI assistant could reach.
+- **Be cautious with "AI assistant" branded extensions specifically.** Attackers have separately been caught distributing fake AI assistant extensions designed purely to look trustworthy.
+
+## Frequently asked questions
+
+**Do I need to stop using my browser's built-in AI assistant?**
+Not necessarily. The underlying vulnerabilities behind this specific attack technique have been patched by major browser vendors. The bigger, ongoing lesson is about extension hygiene, since that's the door this type of attack walks through.
+
+**How would I know if this happened to me?**
+These attacks are designed specifically to run without visible signs — no popups, no obvious clicks required. That's exactly why prevention (careful extension management) matters more than detection after the fact.
+
+**Is this only a problem for AI-powered browsers?**
+No — any browser with a built-in AI assistant that has elevated privileges could theoretically be targeted by a similar technique, not just browsers built entirely around AI.
+
+**Are browser extensions generally riskier now because of AI features?**
+The risk calculus has shifted. Extensions have always carried some risk, but when an extension can potentially reach an AI assistant with deep browser access, the potential impact of a single malicious extension has grown.
+
+## The bottom line
+
+BragJack is a reminder that AI security isn't only about tricking a chatbot with clever wording — it's also about how much trust and privilege we hand to AI systems wired deeply into tools we use every day, like our browsers. The fix isn't avoiding AI features; it's treating browser extensions with the same caution you'd apply to any software with access to your accounts and files.
+
+---
+
+*Catch up on the rest of the series: [Prompt Injection Explained](/blog?category=llm-security) · [AI Threats You'll Actually Encounter](/blog?category=ai-threats) · [How AI Defends Itself](/blog?category=ai-defense-tools)*

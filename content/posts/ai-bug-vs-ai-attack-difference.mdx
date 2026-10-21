@@ -1,0 +1,86 @@
+---
+title: "The Difference Between an AI Bug and an AI Attack (And Why It Matters)"
+description: "Not every weird AI behavior is an attack — some of it is just a bug. Here's how to tell the difference, and why the distinction actually matters."
+date: "2026-10-26"
+tags: ["llm-security", "ai-threats"]
+author: "CyberSec NG"
+---
+
+An AI assistant gives you a wrong answer. Is that a security problem, or just a glitch? If you've been following this series, you now know about [prompt injection](/blog?category=llm-security), [hallucinations](/blog?category=llm-security), [adversarial ML](/blog?category=adversarial-ml), and [AI threats](/blog?category=ai-threats) — but figuring out which category a weird AI moment actually belongs to is its own useful skill. Here's how to tell the difference, and why it matters.
+
+## The one-sentence definition
+
+**A bug is unintentional, built-in unreliability. An attack is a deliberate attempt by someone to manipulate the AI's behavior for their own benefit.**
+
+The distinction isn't always obvious from the outside — both can produce a wrong or unexpected result. But the cause, and what you should do about it, are completely different.
+
+## A simple way to picture it
+
+Think about a calculator. If it occasionally rounds a number incorrectly due to a manufacturing flaw, that's a bug — nobody intended that, and the manufacturer would fix it if they could. If someone physically tampers with the calculator's circuitry so it gives a specific wrong answer on purpose, benefiting themselves somehow, that's an attack. Same symptom — a wrong number — completely different cause, and completely different fix.
+
+AI systems work the same way. A wrong or strange response can come from the AI simply being imperfect, or from someone deliberately engineering that wrong response.
+
+## How to tell which one you're looking at
+
+**Signs it's probably a bug (or hallucination):**
+- The AI seems confidently wrong about a factual question, with no clear motive or beneficiary
+- The mistake is inconsistent — asking again, or rephrasing slightly, gives a different (possibly correct) answer
+- There's no unusual content involved — no suspicious document, email, webpage, or input that the AI was processing
+- The error is something any user might randomly encounter, not tied to a specific document or interaction
+
+**Signs it's probably an attack:**
+- The AI's unexpected behavior happened right after it processed an external document, email, webpage, or uploaded file
+- The output seems to benefit a specific third party — redirecting you somewhere, requesting information, or taking an action that serves someone else's interest
+- The AI did something it was explicitly told not to do, in a way that lines up suspiciously well with content it just read
+- The weird behavior is reproducible using the exact same malicious input, rather than being random
+
+## Why the distinction actually matters
+
+**If it's a bug:**
+- The fix is usually on the AI provider's side — better training, better fact-checking mechanisms, improved model versions
+- Your best individual defense is verification habits — don't take confident answers at face value for anything high-stakes
+- There's generally no "attacker" to worry about beyond the model's own limitations
+
+**If it's an attack:**
+- There's an actual person or group trying to exploit the system, which changes the response entirely
+- You may need to report it (to the AI provider, to your security team, or both)
+- The specific content that triggered it (a document, email, or webpage) should be treated as suspicious and potentially isolated
+- It may indicate a broader vulnerability that others could also exploit — worth flagging rather than just working around
+
+Confusing the two leads to bad outcomes in both directions. Treating a genuine bug like a targeted attack wastes time hunting for an attacker who doesn't exist. Treating a real attack like a random bug means a vulnerability stays unreported and unresolved, leaving it open for the next person.
+
+## A practical example of each
+
+**Bug example:** You ask an AI assistant for a historical date, and it confidently gives you the wrong year. Nobody engineered that — it's a hallucination, the kind we covered in our [previous post](/blog?category=llm-security).
+
+**Attack example:** You ask an AI assistant to summarize an email, and the AI's response includes an unexpected recommendation to click a suspicious link or share account information — because the email itself contained hidden instructions designed to manipulate the AI's output. That's not a random mistake; that's [prompt injection](/blog?category=llm-security) in action.
+
+## A quick checklist for sorting it out
+
+- Did the strange behavior happen immediately after the AI processed an external document, link, or file? → Lean toward attack.
+- Is the mistake random and inconsistent across repeated attempts? → Lean toward bug.
+- Does the output seem to benefit someone other than you? → Lean toward attack.
+- Is it a factual error with no external content involved at all? → Lean toward bug (likely a hallucination).
+- When in doubt, especially in a business or high-stakes setting, report it rather than silently working around it.
+
+## Frequently asked questions
+
+**Can something be both a bug and an attack?**
+In a sense — attackers often exploit the fact that AI systems have inherent unreliability (bugs) as the mechanism for their attack. Prompt injection specifically works because models struggle to reliably separate instructions from content, which is itself a kind of underlying limitation being exploited on purpose.
+
+**Who do I report a suspected AI attack to?**
+Most major AI providers have a way to report problematic or unsafe behavior directly through their platform. If it happened through a business tool, your organization's IT or security team should also be looped in.
+
+**Does this distinction matter for individual users, or just businesses?**
+Both, though businesses have more at stake since AI attacks increasingly target systems with real access to data and actions. Individual users still benefit from knowing the difference so they know when something is worth reporting versus simply double-checking.
+
+**Is one of these more dangerous than the other?**
+It depends on context. A hallucination in a casual chat is low-risk; a hallucination feeding into a business decision can be costly. An attack is generally more concerning because it implies an active, deliberate attempt to exploit the system — and if it worked once, it can likely work again until it's fixed.
+
+## The bottom line
+
+Not every strange AI moment is a security incident, and not every one is harmless either. Learning to tell a bug from an attack — by looking at consistency, external content, and who benefits — helps you respond appropriately instead of either overreacting to a glitch or underreacting to a real threat.
+
+---
+
+*Catch up on the rest of the series: [Prompt Injection Explained](/blog?category=llm-security) · [How AI Defends Itself](/blog?category=ai-defense-tools) · [AI Threats You'll Actually Encounter](/blog?category=ai-threats) · [Adversarial ML Explained](/blog?category=adversarial-ml) · [Is It Safe to Paste Your Resume Into ChatGPT?](/blog?category=llm-security) · [Why AI Chatbots Sometimes "Lie"](/blog?category=llm-security)*
